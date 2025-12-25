@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "quantconnect": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "QUANTCONNECT_USER_ID",
+        "-e",
+        "QUANTCONNECT_API_TOKEN",
+        "-e",
+        "AGENT_NAME",
+        "--platform",
+        "linux/arm64",
+        "quantconnect/mcp-server"
+      ],
+      "env": {
+        "QUANTCONNECT_USER_ID": "441368",
+        "QUANTCONNECT_API_TOKEN": "REDACTED_TOKEN",
+        "AGENT_NAME": "MCP Server"
+      }
+    }
+  }
+}

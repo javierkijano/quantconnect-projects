@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# QuantConnect specific
+*.ipynb_checkpoints/
+.QuantConnect/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local configuration
+claude-mcp-config.json
+.claude/
+
+# Data files (optional - uncomment if you don't want to track data)
+# data/
+
+# Lean config (optional - uncomment if contains sensitive info)
+# lean.json

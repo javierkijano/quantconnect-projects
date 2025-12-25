@@ -1,0 +1,74 @@
+# CLAUDE.md
+
+## Purpose
+This file defines the conventions and expectations for how Claude should interact with QuantConnect projects.
+
+---
+
+## Project Scope & Directory Focus
+- **CRITICAL**: Each Claude Code session operates on a **multi-algorithm repository** with ONE active project directory for modifications.
+- **AT THE START OF EVERY SESSION**: Proactively ask the user which project subdirectory to work on (e.g., `my-strategy/`, `mean-reversion/`, etc.) BEFORE performing any code modifications.
+- List available project subdirectories if helpful to remind the user of their options.
+- **Reading & Context**: You MAY read, analyze, and reference code from ANY subdirectory in the repository to learn patterns, reuse components, or understand the codebase structure.
+- **Writing & Modifications**: You MUST ONLY modify files within the specified active project directory unless explicitly requested otherwise by the user.
+- Before making any code changes, verify you are working within the correct project directory by checking the project's `config.json` file and confirming with the user if uncertain.
+- When reading other projects for context, you can suggest adapting patterns or code, but actual file modifications stay within the active project.
+- This approach allows learning from the full codebase while preventing accidental cross-contamination between algorithm strategies.
+
+---
+
+## Development Environment
+- Code should be **Python-first**, but C# examples may be used for reference if necessary.
+- The project Id is in the config file, under `cloud-id`. Don't call the `list_backtests` tool unless it's absolutely needed.
+- External dependencies must be avoided unless they are supported in QuantConnect's cloud environment. When in doubt, suggest native LEAN methods.
+- When drafting code, prefer modular design. Place custom indicators in an `indicators/` directory.
+- Prioritize classic QC algorithm design over the algorithm framework unless explicitly requested.
+- When creating indicator objects (such as RSI, SMA, etc.), never overwrite the indicator method names (e.g., do not assign to `self.rsi`, `self.sma`, etc.). Instead, use a different variable name, preferably with a leading underscore for non-public instance variables (e.g., `self._rsi = self.rsi(self._symbol, 14)`). This prevents conflicts with the built-in indicator methods and ensures code reliability.
+- After adding or editing code, call the compile tool (`create_compile` and `read_compile`) in the QuantConnect MCP server to get the syntax errors and then FIX ALL COMPILE WARNINGS.
+
+
+---
+
+## Data Handling
+- Use QuantConnect’s **built-in dataset APIs** (Equity, Futures, Options, Crypto, FX).  
+- For alternative datasets, reference [QuantConnect’s Data Library](https://www.quantconnect.com/datasets/) and link to documentation rather than suggesting unsupported APIs.
+
+---
+
+## Research Standards
+- Backtest code should include:
+  - A clear `initialize()` with securities, resolution, and cash set explicitly.
+  - Example parameters (start date, end date, cash) that are realistic for production-scale testing.
+  - At least one comment section explaining the strategy’s core logic.
+- When generating new strategies, provide a **one-paragraph explanation** of the trading idea in plain English before showing code.
+- Prefer **transparent, explainable strategies**. Avoid “black-box” style outputs.
+
+---
+
+## Style Guidelines
+- Code must follow **PEP8** where possible.
+- Use **docstrings** on all public classes and functions.
+- Responses should be in **Markdown**, with code blocks fenced by triple backticks and the language identifier.
+
+---
+
+## Risk Management
+- Always emphasize risk controls in strategy outputs:
+  - Max position sizing rules.
+  - Stop-loss or drawdown limits.
+  - Portfolio exposure constraints.
+- Always use the `live_mode` flag and log the live mode in `initialize`.
+
+---
+
+## Security & Compliance
+- Do not reference or fabricate API keys, credentials, or client secrets.
+- Avoid suggesting integrations with unsupported brokers.
+- If a user requests something outside QuantConnect’s compliance boundaries (e.g., high-frequency order spoofing, or prohibited datasets), politely decline.
+
+---
+
+## Tone & Communication
+- Keep responses professional, concise, and explanatory.
+- Prioritize **clarity over cleverness**.  
+- Always explain why you made a design choice if multiple options exist.

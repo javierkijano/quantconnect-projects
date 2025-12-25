@@ -1,0 +1,98 @@
+2025-12-22T01:42:24.3359253Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) Host: Javiers-MacBook-Pro
+2025-12-22T01:42:24.3543303Z TRACE:: Engine.Main(): Started 1:42 AM
+2025-12-22T01:42:24.3596833Z TRACE:: Config.Get(): Configuration key not found. Key: lean-manager-type - Using default value: LocalLeanManager
+2025-12-22T01:42:24.3843443Z TRACE:: JobQueue.NextJob(): Selected /LeanCLI/main.py
+2025-12-22T01:42:24.4079185Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-capacity - Using default value: 120
+2025-12-22T01:42:24.4080960Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-time-interval-minutes - Using default value: 1440
+2025-12-22T01:42:24.4081984Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-refill-amount - Using default value: 18
+2025-12-22T01:42:24.4089336Z TRACE:: Config.GetValue(): storage-limit - Using default value: 10737418240
+2025-12-22T01:42:24.4123701Z TRACE:: Config.GetValue(): storage-permissions - Using default value: Read=True Write=True Delete=True
+2025-12-22T01:42:24.4130059Z TRACE:: Config.Get(): Configuration key not found. Key: optimization-id - Using default value: 
+2025-12-22T01:42:24.4134835Z TRACE:: Config.Get(): Configuration key not found. Key: backtest-name - Using default value: local
+2025-12-22T01:42:24.4190122Z TRACE:: Config.Get(): Configuration key not found. Key: data-channel - Using default value: 
+2025-12-22T01:42:24.4193633Z TRACE:: Config.Get(): Configuration key not found. Key: python-venv - Using default value: 
+2025-12-22T01:42:24.4197390Z TRACE:: Config.Get(): Configuration key not found. Key: out-of-sample-max-end-date - Using default value: 
+2025-12-22T01:42:24.4199451Z TRACE:: Config.GetValue(): out-of-sample-days - Using default value: 0
+2025-12-22T01:42:24.4222530Z TRACE:: Config.Get(): Configuration key not found. Key: data-permission-manager - Using default value: DataPermissionManager
+2025-12-22T01:42:24.4233960Z TRACE:: Config.Get(): Configuration key not found. Key: data-monitor - Using default value: QuantConnect.Data.DataMonitor
+2025-12-22T01:42:24.4375746Z TRACE:: Config.GetValue(): initialization-timeout - Using default value: 300
+2025-12-22T01:42:24.4379702Z TRACE:: Config.GetValue(): algorithm-creation-timeout - Using default value: 90
+2025-12-22T01:42:24.4454182Z TRACE:: Config.GetValue(): zip-data-cache-provider - Using default value: 10
+2025-12-22T01:42:24.4483192Z TRACE:: Config.Get(): Configuration key not found. Key: fundamental-data-provider - Using default value: CoarseFundamentalDataProvider
+2025-12-22T01:42:24.4515392Z TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+2025-12-22T01:42:24.4520210Z TRACE:: Config.GetValue(): algorithm-manager-time-loop-maximum - Using default value: 20
+2025-12-22T01:42:24.4577457Z TRACE:: Config.GetValue(): downloader-data-update-period - Using default value: 7
+2025-12-22T01:42:24.4608611Z TRACE:: Engine.Run(): Resource limits '0' CPUs. 2147483647 MB RAM.
+2025-12-22T01:42:24.4617915Z TRACE:: TextSubscriptionDataSourceReader.SetCacheSize(): Setting cache size to 71582788 items
+2025-12-22T01:42:24.9748966Z TRACE:: PythonInitializer.Initialize(): start...
+2025-12-22T01:42:25.1811553Z TRACE:: PythonInitializer.Initialize(): ended
+2025-12-22T01:42:25.1833326Z TRACE:: AlgorithmPythonWrapper(): Python version 3.11.9 | packaged by conda-forge | (main, Apr 19 2024, 18:26:34) [GCC 12.3.0]: Importing python module main
+2025-12-22T01:42:28.2967993Z TRACE:: AlgorithmPythonWrapper(): main successfully imported.
+2025-12-22T01:42:28.3055894Z TRACE:: AlgorithmPythonWrapper(): Creating IAlgorithm instance.
+2025-12-22T01:42:28.3170163Z TRACE:: Config.Get(): Configuration key not found. Key: databases-refresh-period - Using default value: 1.00:00:00
+2025-12-22T01:42:28.3970644Z TRACE:: Config.GetValue(): mute-python-library-logging - Using default value: True
+2025-12-22T01:42:28.4017977Z TRACE:: LocalObjectStore.Initialize(): Storage Root: /Storage. StorageFileCount 9999999. StorageLimit 10240MB. StoragePermissions Read=True Write=True Delete=True
+2025-12-22T01:42:28.4081452Z TRACE:: Config.GetValue(): zip-data-cache-provider - Using default value: 10
+2025-12-22T01:42:28.4139612Z TRACE:: HistoryProviderManager.Initialize(): history providers [SubscriptionDataReaderHistoryProvider]
+2025-12-22T01:42:28.4181732Z TRACE:: BaseSetupHandler.Setup(LocalPlatform): UID: 441368, PID: 26939379, Version: 2.5.0.0, Source: WebIDE
+2025-12-22T01:42:28.4225520Z TRACE:: Config.Get(): Configuration key not found. Key: security-data-feeds - Using default value: 
+2025-12-22T01:42:28.4354459Z TRACE:: BacktestingResultHandler(): Sample Period Set: 3677.76
+2025-12-22T01:42:28.4365534Z TRACE:: Config.GetValue(): forward-console-messages - Using default value: True
+2025-12-22T01:42:28.4685524Z ERROR:: Engine.Run(): During the algorithm initialization, the following exception has occurred: property is read-only
+  at _load_parameters
+    self.start_date = self._get_date_param("start_date", datetime(2013, 1, 1))
+    ^^^^^^^^^^^^^^^
+ in main.py: line 386
+  at Initialize
+    self._load_parameters()
+ in main.py: line 15
+ property is read-only
+2025-12-22T01:42:28.4690359Z TRACE:: JOB HANDLERS:
+         DataFeed:             QuantConnect.Lean.Engine.DataFeeds.FileSystemDataFeed
+         Setup:                QuantConnect.Lean.Engine.Setup.BacktestingSetupHandler
+         RealTime:             QuantConnect.Lean.Engine.RealTime.BacktestingRealTimeHandler
+         Results:              QuantConnect.Lean.Engine.Results.BacktestingResultHandler
+         Transactions:         QuantConnect.Lean.Engine.TransactionHandlers.BacktestingTransactionHandler
+         Object Store:         QuantConnect.Lean.Engine.Storage.LocalObjectStore
+         History Provider:     QuantConnect.Lean.Engine.HistoricalData.HistoryProviderManager
+         Brokerage:            QuantConnect.Brokerages.Backtesting.BacktestingBrokerage
+         Data Provider:        QuantConnect.Lean.Engine.DataFeeds.DefaultDataProvider
+
+2025-12-22T01:42:28.4694178Z TRACE:: FileSystemDataFeed.Exit(): Start. Setting cancellation token...
+2025-12-22T01:42:28.4733515Z TRACE:: FileSystemDataFeed.Exit(): Exit Finished.
+2025-12-22T01:42:28.4746689Z TRACE:: BacktestingResultHandler.Exit(): starting...
+2025-12-22T01:42:28.4858182Z ERROR:: During the algorithm initialization, the following exception has occurred: property is read-only
+  at _load_parameters
+    self.start_date = self._get_date_param("start_date", datetime(2013, 1, 1))
+    ^^^^^^^^^^^^^^^
+ in main.py: line 386
+  at Initialize
+    self._load_parameters()
+ in main.py: line 15
+ property is read-only
+ property is read-only
+  at _load_parameters
+    self.start_date = self._get_date_param("start_date", datetime(2013, 1, 1))
+    ^^^^^^^^^^^^^^^
+ in main.py: line 386
+  at Initialize
+    self._load_parameters()
+ in main.py: line 15
+ property is read-only
+2025-12-22T01:42:28.5451832Z TRACE:: BacktestingResultHandler.Exit(): Saving logs...
+2025-12-22T01:42:28.5472858Z TRACE:: StopSafely(): Waiting for 'Result Thread' thread to stop...
+2025-12-22T01:42:28.5473993Z TRACE:: Debug: Your log was successfully created and can be retrieved from: /Results/1824475596-log.txt
+2025-12-22T01:42:28.5477277Z TRACE:: BacktestingResultHandler.Run(): Ending Thread...
+2025-12-22T01:42:28.6371384Z TRACE:: 
+STATISTICS:: OrderListHash d41d8cd98f00b204e9800998ecf8427e
+2025-12-22T01:42:28.6374347Z TRACE:: BacktestingResultHandler.SendAnalysisResult(): Processed final packet
+2025-12-22T01:42:28.6408065Z TRACE:: Engine.Run(): Disconnecting from brokerage...
+2025-12-22T01:42:28.6415517Z TRACE:: Engine.Run(): Disposing of setup handler...
+2025-12-22T01:42:28.6420451Z TRACE:: Engine.Main(): Analysis Completed and Results Posted.
+2025-12-22T01:42:28.6513724Z TRACE:: Engine.Main(): Packet removed from queue: 1824475596
+2025-12-22T01:42:28.6521540Z TRACE:: LeanEngineSystemHandlers.Dispose(): start...
+2025-12-22T01:42:28.6543778Z TRACE:: LeanEngineSystemHandlers.Dispose(): Disposed of system handlers.
+2025-12-22T01:42:28.6573602Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): start...
+2025-12-22T01:42:28.6603636Z TRACE:: LocalObjectStore.Dispose(): start...
+2025-12-22T01:42:28.6613800Z TRACE:: LocalObjectStore.Dispose(): end
+2025-12-22T01:42:28.6625674Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): Disposed of algorithm handlers.
