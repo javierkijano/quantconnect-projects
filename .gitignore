@@ -41,6 +41,7 @@ Thumbs.db
 # Local configuration
 claude-mcp-config.json
 .claude/
+.mcp.json
 
 # Data files (optional - uncomment if you don't want to track data)
 # data/
