@@ -1,8 +1,6 @@
 {
-    "cloud-id": 26981865,
-    "algorithm-language": "Python",
-    "parameters": {},
-    "description": "",
-    "organization-id": "4a126cf410495f203f06ef196290990f",
-    "python-venv": 1
+  "cloud-id": "PROJECT_ID",
+  "algorithm-language": "Python",
+  "algorithm-location": "main.py",
+  "lib-folders": []
 }
